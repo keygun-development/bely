@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CompetitieController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LidController;
+use App\Http\Controllers\WedstrijdController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +18,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::middleware('auth')->group(function () {
+    Route::get('/', [HomeController::class, 'index'])->name('home');
+    Route::get('/wedstrijden', [WedstrijdController::class, 'index'])->name('wedstrijden');
+    Route::get('/leden', [LidController::class, 'index'])->name('leden');
+    Route::get('/competitie', [CompetitieController::class, 'index'])->name('competitie');
+    Route::post('/uitloggen', [WedstrijdController::class, 'index'])->name('uitloggen');
 });
+
+
+Route::get('/inloggen', [AuthController::class, 'index'])->name('login');
+Route::post('/inloggen/post', [AuthController::class, 'login'])->name('login.post');

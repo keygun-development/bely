@@ -1,0 +1,7 @@
+.c-button {
+    @apply px-5 py-2.5 font-medium rounded text-sm text-center cursor-pointer;
+
+    &__blue {
+        @apply text-white bg-blue-500 hover:bg-blue-600;
+    }
+}

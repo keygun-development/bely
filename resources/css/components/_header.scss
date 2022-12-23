@@ -1,0 +1,25 @@
+.c-header {
+    @apply relative bg-cover bg-no-repeat bg-center p-8 z-0 shadow-md;
+    background-image: url("../../public/images/header.jfif");
+
+    &:before {
+        @apply bg-[#35748a] absolute inset-0;
+        z-index: -1;
+        content: "";
+        opacity: .8;
+    }
+
+    ul {
+        @apply text-white font-semibold text-xl;
+
+        a {
+            @apply px-4 p-2;
+        }
+
+        .current-menu-item {
+            a {
+                @apply border-b-2 border-blue-300;
+            }
+        }
+    }
+}
