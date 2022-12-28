@@ -1,13 +1,12 @@
 @extends('layouts.app')
-@section('pageTitle', 'Wedstrijd detail')
+@section('pageTitle', 'Nieuwe wedstrijd')
 @section('content')
     <div class="main-container">
         <h1>
-            Wedstrijd details
+            Nieuwe wedstrijd
         </h1>
-        <form method="POST" action="/wedstrijd/update" class="mt-4">
+        <form method="POST" action="/wedstrijd/create" class="mt-4">
             @csrf
-            <input type="hidden" name="id" value="{{ $wedstrijd->id }}"/>
             <div class="flex md:justify-between flex-col md:flex-row">
                 <div class="md:w-6/12">
                     <div class="md:w-6/12">
@@ -17,7 +16,6 @@
                         <select class="c-form__input-float" name="speler1">
                             @foreach($users as $user)
                                 <option
-                                    {{ $user->id === $wedstrijd->SpelerWij1 ? 'selected' : '' }}
                                     value="{{ $user->id }}">
                                     {{ $user->Verkortenaam }}
                                 </option>
@@ -31,7 +29,6 @@
                         <select class="c-form__input-float" name="speler2">
                             @foreach($users as $user)
                                 <option
-                                    {{ $user->id === $wedstrijd->SpelerWij2 ? 'selected' : '' }}
                                     value="{{ $user->id }}">
                                     {{ $user->Verkortenaam }}
                                 </option>
@@ -45,7 +42,6 @@
                         <select class="c-form__input-float" name="speler3">
                             @foreach($users as $user)
                                 <option
-                                    {{ $user->id === $wedstrijd->SpelerWij3 ? 'selected' : '' }}
                                     value="{{ $user->id }}">
                                     {{ $user->Verkortenaam }}
                                 </option>
@@ -56,7 +52,7 @@
                         <p>
                             Score wij:
                         </p>
-                        <input class="c-form__input-float" type="number" max="13" value="{{ $wedstrijd->ScoreWij }}" name="scorewij" />
+                        <input class="c-form__input-float" type="number" max="13" name="scorewij" />
                     </div>
                 </div>
                 <div class="md:w-6/12">
@@ -67,7 +63,6 @@
                         <select class="c-form__input-float" name="speler4">
                             @foreach($users as $user)
                                 <option
-                                    {{ $user->id === $wedstrijd->SpelerZij1 ? 'selected' : '' }}
                                     value="{{ $user->id }}">
                                     {{ $user->Verkortenaam }}
                                 </option>
@@ -81,7 +76,6 @@
                         <select class="c-form__input-float" name="speler5">
                             @foreach($users as $user)
                                 <option
-                                    {{ $user->id === $wedstrijd->SpelerZij2 ? 'selected' : '' }}
                                     value="{{ $user->id }}">
                                     {{ $user->Verkortenaam }}
                                 </option>
@@ -95,7 +89,6 @@
                         <select class="c-form__input-float" name="speler6">
                             @foreach($users as $user)
                                 <option
-                                    {{ $user->id === $wedstrijd->SpelerZij3 ? 'selected' : '' }}
                                     value="{{ $user->id }}">
                                     {{ $user->Verkortenaam }}
                                 </option>
@@ -106,7 +99,7 @@
                         <p>
                             Score zij:
                         </p>
-                        <input class="c-form__input-float" type="number" max="13" value="{{ $wedstrijd->ScoreZij }}" name="scorezij" />
+                        <input class="c-form__input-float" type="number" max="13" name="scorezij" />
                     </div>
                 </div>
             </div>
@@ -116,7 +109,6 @@
                 </p>
                 <input
                     type="datetime-local"
-                    value="{{ \Carbon\Carbon::create($wedstrijd->Datum)->format('Y-m-d\TH:i') }}"
                     name="datum"
                     class="c-form__input-float"
                 />
@@ -127,7 +119,7 @@
                 </p>
                 <input
                     type="text"
-                    value="{{ $wedstrijd->Competitie }}"
+                    value="{{ \Carbon\Carbon::now()->year }}"
                     name="competitie"
                     class="c-form__input-float"
                 />
@@ -138,7 +130,7 @@
                 </p>
             @endif
             <div class="mt-4">
-                <input type="submit" class="c-button c-button__blue" value="Aanpassen"/>
+                <input type="submit" class="c-button c-button__blue" value="Aanmaken"/>
             </div>
         </form>
     </div>

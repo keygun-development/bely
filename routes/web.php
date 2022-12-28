@@ -23,7 +23,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/wedstrijden', [WedstrijdController::class, 'index'])->name('wedstrijden');
     Route::get('/leden', [LidController::class, 'index'])->name('leden');
     Route::get('/competitie', [CompetitieController::class, 'index'])->name('competitie');
-    Route::post('/uitloggen', [WedstrijdController::class, 'index'])->name('uitloggen');
+    Route::post('/uitloggen', [AuthController::class, 'logout'])->name('uitloggen');
 
     Route::get('/wedstrijden/edit/{id}', [WedstrijdController::class, 'edit'])->name('wedstrijd.edit');
     Route::post('/wedstrijd/update', [WedstrijdController::class, 'update'])->name('wedstrijd.update');
@@ -32,6 +32,14 @@ Route::middleware('auth')->group(function () {
     Route::post('/lid/delete', [LidController::class, 'delete'])->name('lid.delete');
     Route::post('/lid/update', [LidController::class, 'update'])->name('lid.update');
     Route::get('/leden/edit/{id}', [LidController::class, 'edit'])->name('lid.edit');
+
+    Route::get('/wedstrijden/new', [WedstrijdController::class, 'newPage'])->name('wedstrijd.new');
+    Route::post('/wedstrijd/create', [WedstrijdController::class, 'create'])->name('wedstrijd.create');
+
+    Route::get('/lid/new', [LidController::class, 'newPage'])->name('lid.new');
+    Route::post('/lid/create', [LidController::class, 'create'])->name('lid.create');
+
+    Route::get('/leden/{id}', [LidController::class, 'detailPage'])->name('lid.detail');
 });
 
 

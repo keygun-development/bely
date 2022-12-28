@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Lid;
+use App\Models\User;
 use App\Models\Wedstrijd;
 use Illuminate\Http\Request;
 
@@ -63,5 +64,31 @@ class WedstrijdController extends Controller
         $wedstrijd = Wedstrijd::where('id', $request->id)->first();
         $wedstrijd->delete();
         return redirect()->back()->with('success', 'Wedstrijd succesvol verwijderd!');
+    }
+
+    public function newPage()
+    {
+        return view('wedstrijdnew', [
+            'users' => Lid::all()
+        ]);
+    }
+
+    public function create(Request $request)
+    {
+        $wedstrijd = new Wedstrijd();
+
+        $wedstrijd->Datum = $request->datum;
+        $wedstrijd->Competitie = $request->competitie;
+        $wedstrijd->SpelerWij1 = $request->speler1;
+        $wedstrijd->SpelerWij2 = $request->speler2;
+        $wedstrijd->SpelerWij3 = $request->speler3;
+        $wedstrijd->SpelerZij1 = $request->speler4;
+        $wedstrijd->SpelerZij2 = $request->speler5;
+        $wedstrijd->SpelerZij3 = $request->speler6;
+        $wedstrijd->ScoreWij = $request->scorewij;
+        $wedstrijd->ScoreZij = $request->scorezij;
+
+        $wedstrijd->save();
+        return redirect()->back()->with('success', 'Wedstrijd succesvol aangemaakt!');
     }
 }

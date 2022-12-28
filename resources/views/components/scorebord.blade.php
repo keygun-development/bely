@@ -30,7 +30,7 @@
             <td>
                 {{ $key+1 }}
             </td>
-            <td>
+            <td onclick="window.location='/leden/{{ $speler->userid }}'" class="cursor-pointer hover:underline">
                 {{ $speler->name }}
             </td>
             <td>

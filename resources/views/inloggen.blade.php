@@ -6,7 +6,7 @@
             <h1>
                 Inloggen Tao
             </h1>
-            <form method="POST" action="/inloggen/post" class="c-card mt-4 w-3/12">
+            <form method="POST" action="/inloggen/post" class="c-card mt-4 md:w-3/12">
                 @csrf
                 <div>
                     <p>
@@ -24,7 +24,7 @@
                         </ul>
                     </div>
                 @endif
-                <input type="submit" class="c-button c-button__blue mt-4"/>
+                <input value="Inloggen" type="submit" class="c-button c-button__blue mt-4"/>
             </form>
         </div>
     </div>

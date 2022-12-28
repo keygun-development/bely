@@ -50,4 +50,31 @@ class LidController extends Controller
 
         return redirect()->back()->with('success', 'Lid succesvol aangepast!');
     }
+
+    public function newPage()
+    {
+        return view('lidnew');
+    }
+
+    public function create(Request $request)
+    {
+        $lid = new Lid();
+
+        $lid->Voornaam = $request->voornaam;
+        $lid->Achternaam = $request->achternaam;
+        $lid->Gebdatum = $request->datum;
+        $lid->Sterkte = $request->sterkte;
+        $lid->Verkortenaam = $request->verkortenaam;
+
+        $lid->save();
+
+        return redirect()->back()->with('success', 'Lid succesvol aangemaakt!');
+    }
+
+    public function detailPage(Request $request)
+    {
+        return view('lid', [
+            'lid' => Lid::where('id', $request->id)->first()
+        ]);
+    }
 }

@@ -10,6 +10,7 @@
 <x-nav-link :href="route('competitie')" :active="request()->routeIs('competitie')">
     {{ __('Competitie') }}
 </x-nav-link>
-<form method="POST">
+<form method="POST" action="uitloggen">
+    @csrf
     <input type="submit" value="Uitloggen" class="cursor-pointer"/>
 </form>

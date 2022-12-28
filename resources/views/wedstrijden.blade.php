@@ -7,7 +7,7 @@
                 Wedstrijden
             </h1>
             <div class="sm:ml-4 mt-4 sm:mt-0">
-                <a class="c-button c-button__blue">
+                <a href="/wedstrijden/new" class="c-button c-button__blue">
                     Nieuwe wedstrijd
                 </a>
             </div>

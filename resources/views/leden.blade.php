@@ -6,7 +6,7 @@
             <h1>
                 Leden
             </h1>
-            <a class="c-button c-button__blue ml-4">
+            <a href="/lid/new" class="c-button c-button__blue ml-4">
                 Nieuw lid
             </a>
         </div>
