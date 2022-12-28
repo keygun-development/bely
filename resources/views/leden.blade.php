@@ -10,7 +10,12 @@
                 Nieuw lid
             </a>
         </div>
-        <div class="mt-4 grid grid-cols-4 gap-4">
+        @if(session('success'))
+            <p class="text-green-400">
+                {{ session('success') }}
+            </p>
+        @endif
+        <div class="mt-4 grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-4">
             @foreach($leden as $lid)
                 <x-lid.card
                     :item="$lid"

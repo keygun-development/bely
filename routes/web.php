@@ -24,6 +24,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/leden', [LidController::class, 'index'])->name('leden');
     Route::get('/competitie', [CompetitieController::class, 'index'])->name('competitie');
     Route::post('/uitloggen', [WedstrijdController::class, 'index'])->name('uitloggen');
+
+    Route::get('/wedstrijden/edit/{id}', [WedstrijdController::class, 'edit'])->name('wedstrijd.edit');
+    Route::post('/wedstrijd/update', [WedstrijdController::class, 'update'])->name('wedstrijd.update');
+    Route::post('/wedstrijd/delete', [WedstrijdController::class, 'delete'])->name('wedstrijd.delete');
+
+    Route::post('/lid/delete', [LidController::class, 'delete'])->name('lid.delete');
+    Route::post('/lid/update', [LidController::class, 'update'])->name('lid.update');
+    Route::get('/leden/edit/{id}', [LidController::class, 'edit'])->name('lid.edit');
 });
 
 

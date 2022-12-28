@@ -4,4 +4,12 @@
     &__blue {
         @apply text-white bg-blue-500 hover:bg-blue-600;
     }
+
+    &__red {
+        @apply text-white bg-red-500 hover:bg-red-600;
+    }
+
+    &__gray {
+        @apply text-white bg-gray-500 hover:bg-gray-600;
+    }
 }
