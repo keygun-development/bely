@@ -64,6 +64,15 @@
                     {{ session('success') }}
                 </p>
             @endif
+            @if($errors->any())
+                <div class="text-red-500">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <div class="mt-4">
                 <input type="submit" class="c-button__blue c-button" value="Opslaan"/>
             </div>

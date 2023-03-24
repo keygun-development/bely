@@ -38,6 +38,13 @@ class LidController extends Controller
 
     public function update(Request $request)
     {
+        $request->validate([
+            'voornaam' => 'required',
+            'achternaam' => 'required',
+            'datum' => 'required',
+            'sterkte' => 'required',
+            'verkortenaam' => 'required'
+        ]);
         $lid = Lid::where('id', $request->id)->first();
 
         $lid->Voornaam = $request->voornaam;
@@ -58,6 +65,13 @@ class LidController extends Controller
 
     public function create(Request $request)
     {
+        $request->validate([
+            'voornaam' => 'required',
+            'achternaam' => 'required',
+            'datum' => 'required',
+            'sterkte' => 'required',
+            'verkortenaam' => 'required'
+        ]);
         $lid = new Lid();
 
         $lid->Voornaam = $request->voornaam;
@@ -69,12 +83,5 @@ class LidController extends Controller
         $lid->save();
 
         return redirect()->back()->with('success', 'Lid succesvol aangemaakt!');
-    }
-
-    public function detailPage(Request $request)
-    {
-        return view('lid', [
-            'lid' => Lid::where('id', $request->id)->first()
-        ]);
     }
 }

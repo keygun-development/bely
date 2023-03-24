@@ -15,6 +15,7 @@
                             Speler wij 1:
                         </p>
                         <select class="c-form__input-float" name="speler1">
+                            <option></option>
                             @foreach($users as $user)
                                 <option
                                     {{ $user->id === $wedstrijd->SpelerWij1 ? 'selected' : '' }}
@@ -29,6 +30,7 @@
                             Speler wij 2:
                         </p>
                         <select class="c-form__input-float" name="speler2">
+                            <option></option>
                             @foreach($users as $user)
                                 <option
                                     {{ $user->id === $wedstrijd->SpelerWij2 ? 'selected' : '' }}
@@ -43,6 +45,7 @@
                             Speler wij 3:
                         </p>
                         <select class="c-form__input-float" name="speler3">
+                            <option></option>
                             @foreach($users as $user)
                                 <option
                                     {{ $user->id === $wedstrijd->SpelerWij3 ? 'selected' : '' }}
@@ -65,6 +68,7 @@
                             Speler zij 1:
                         </p>
                         <select class="c-form__input-float" name="speler4">
+                            <option></option>
                             @foreach($users as $user)
                                 <option
                                     {{ $user->id === $wedstrijd->SpelerZij1 ? 'selected' : '' }}
@@ -79,6 +83,7 @@
                             Speler zij 2:
                         </p>
                         <select class="c-form__input-float" name="speler5">
+                            <option></option>
                             @foreach($users as $user)
                                 <option
                                     {{ $user->id === $wedstrijd->SpelerZij2 ? 'selected' : '' }}
@@ -93,6 +98,7 @@
                             Speler zij 3:
                         </p>
                         <select class="c-form__input-float" name="speler6">
+                            <option></option>
                             @foreach($users as $user)
                                 <option
                                     {{ $user->id === $wedstrijd->SpelerZij3 ? 'selected' : '' }}
@@ -136,6 +142,15 @@
                 <p class="text-green-400">
                     {{ session('success') }}
                 </p>
+            @endif
+            @if($errors->any())
+                <div class="text-red-500">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
             @endif
             <div class="mt-4">
                 <input type="submit" class="c-button c-button__blue" value="Aanpassen"/>

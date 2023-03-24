@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('pageTitle', 'Home')
+@section('pageTitle', 'Leden')
 @section('content')
     <div class="main-container">
         <div class="flex">

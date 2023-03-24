@@ -14,6 +14,7 @@
                             Speler wij 1:
                         </p>
                         <select class="c-form__input-float" name="speler1">
+                            <option></option>
                             @foreach($users as $user)
                                 <option
                                     value="{{ $user->id }}">
@@ -27,6 +28,7 @@
                             Speler wij 2:
                         </p>
                         <select class="c-form__input-float" name="speler2">
+                            <option></option>
                             @foreach($users as $user)
                                 <option
                                     value="{{ $user->id }}">
@@ -40,6 +42,7 @@
                             Speler wij 3:
                         </p>
                         <select class="c-form__input-float" name="speler3">
+                            <option></option>
                             @foreach($users as $user)
                                 <option
                                     value="{{ $user->id }}">
@@ -61,6 +64,7 @@
                             Speler zij 1:
                         </p>
                         <select class="c-form__input-float" name="speler4">
+                            <option></option>
                             @foreach($users as $user)
                                 <option
                                     value="{{ $user->id }}">
@@ -74,6 +78,7 @@
                             Speler zij 2:
                         </p>
                         <select class="c-form__input-float" name="speler5">
+                            <option></option>
                             @foreach($users as $user)
                                 <option
                                     value="{{ $user->id }}">
@@ -87,6 +92,7 @@
                             Speler zij 3:
                         </p>
                         <select class="c-form__input-float" name="speler6">
+                            <option></option>
                             @foreach($users as $user)
                                 <option
                                     value="{{ $user->id }}">
@@ -110,6 +116,7 @@
                 <input
                     type="datetime-local"
                     name="datum"
+                    value="{{ \Carbon\Carbon::now()->format('Y-m-d\TH:i') }}"
                     class="c-form__input-float"
                 />
             </div>
@@ -128,6 +135,15 @@
                 <p class="text-green-400">
                     {{ session('success') }}
                 </p>
+            @endif
+            @if($errors->any())
+                <div class="text-red-500">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
             @endif
             <div class="mt-4">
                 <input type="submit" class="c-button c-button__blue" value="Aanmaken"/>

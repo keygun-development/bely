@@ -38,8 +38,6 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/lid/new', [LidController::class, 'newPage'])->name('lid.new');
     Route::post('/lid/create', [LidController::class, 'create'])->name('lid.create');
-
-    Route::get('/leden/{id}', [LidController::class, 'detailPage'])->name('lid.detail');
 });
 
 

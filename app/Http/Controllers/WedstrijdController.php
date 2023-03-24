@@ -35,12 +35,20 @@ class WedstrijdController extends Controller
         return view('wedstrijddetail', [
             'wedstrijd' => Wedstrijd::where('id', $request->id)
                 ->first(),
-            'users' => Lid::all()
+            'users' => Lid::all()->sortBy('Verkortenaam')
         ]);
     }
 
     public function update(Request $request)
     {
+        $request->validate([
+            'datum' => 'required',
+            'competitie' => 'required',
+            'speler1' => 'required',
+            'speler4' => 'required',
+            'scorewij' => 'required',
+            'scorezij' => 'required'
+        ]);
         $wedstrijd = Wedstrijd::where('id', $request->id)->first();
 
         $wedstrijd->Datum = $request->datum;
@@ -69,12 +77,20 @@ class WedstrijdController extends Controller
     public function newPage()
     {
         return view('wedstrijdnew', [
-            'users' => Lid::all()
+            'users' => Lid::all()->sortBy('Verkortenaam')
         ]);
     }
 
     public function create(Request $request)
     {
+        $request->validate([
+            'datum' => 'required',
+            'competitie' => 'required',
+            'speler1' => 'required',
+            'speler4' => 'required',
+            'scorewij' => 'required',
+            'scorezij' => 'required'
+        ]);
         $wedstrijd = new Wedstrijd();
 
         $wedstrijd->Datum = $request->datum;

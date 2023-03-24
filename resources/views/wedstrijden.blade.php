@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('pageTitle', 'Home')
+@section('pageTitle', 'Wedstrijden')
 @section('content')
     <div class="main-container">
         <div class="flex flex-col sm:flex-row sm:items-center">
