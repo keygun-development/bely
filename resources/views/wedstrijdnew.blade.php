@@ -7,105 +7,26 @@
         </h1>
         <form method="POST" action="/wedstrijd/create" class="mt-4">
             @csrf
-            <div class="flex md:justify-between flex-col md:flex-row">
-                <div class="md:w-6/12">
+            <div class="w-full">
+                <Tiles
+                    :players="{{ $users }}"
+                ></Tiles>
+                <div class="flex md:justify-between flex-col md:flex-row">
                     <div class="md:w-6/12">
-                        <p>
-                            Speler wij 1:
-                        </p>
-                        <select class="c-form__input-float" name="speler1">
-                            <option></option>
-                            @foreach($users as $user)
-                                <option
-                                    value="{{ $user->id }}">
-                                    {{ $user->Verkortenaam }}
-                                </option>
-                            @endforeach
-                        </select>
+                        <div class="md:w-6/12 mt-4">
+                            <p>
+                                Score wij:
+                            </p>
+                            <input class="c-form__input-float" type="number" max="13" name="scorewij"/>
+                        </div>
                     </div>
-                    <div class="md:w-6/12 mt-4">
-                        <p>
-                            Speler wij 2:
-                        </p>
-                        <select class="c-form__input-float" name="speler2">
-                            <option></option>
-                            @foreach($users as $user)
-                                <option
-                                    value="{{ $user->id }}">
-                                    {{ $user->Verkortenaam }}
-                                </option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="md:w-6/12 mt-4">
-                        <p>
-                            Speler wij 3:
-                        </p>
-                        <select class="c-form__input-float" name="speler3">
-                            <option></option>
-                            @foreach($users as $user)
-                                <option
-                                    value="{{ $user->id }}">
-                                    {{ $user->Verkortenaam }}
-                                </option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="md:w-6/12 mt-4">
-                        <p>
-                            Score wij:
-                        </p>
-                        <input class="c-form__input-float" type="number" max="13" name="scorewij" />
-                    </div>
-                </div>
-                <div class="md:w-6/12">
-                    <div class="md:w-6/12 mt-4 md:mt-0">
-                        <p>
-                            Speler zij 1:
-                        </p>
-                        <select class="c-form__input-float" name="speler4">
-                            <option></option>
-                            @foreach($users as $user)
-                                <option
-                                    value="{{ $user->id }}">
-                                    {{ $user->Verkortenaam }}
-                                </option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="md:w-6/12 mt-4">
-                        <p>
-                            Speler zij 2:
-                        </p>
-                        <select class="c-form__input-float" name="speler5">
-                            <option></option>
-                            @foreach($users as $user)
-                                <option
-                                    value="{{ $user->id }}">
-                                    {{ $user->Verkortenaam }}
-                                </option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="md:w-6/12 mt-4">
-                        <p>
-                            Speler zij 3:
-                        </p>
-                        <select class="c-form__input-float" name="speler6">
-                            <option></option>
-                            @foreach($users as $user)
-                                <option
-                                    value="{{ $user->id }}">
-                                    {{ $user->Verkortenaam }}
-                                </option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="md:w-6/12 mt-4">
-                        <p>
-                            Score zij:
-                        </p>
-                        <input class="c-form__input-float" type="number" max="13" name="scorezij" />
+                    <div class="md:w-6/12">
+                        <div class="md:w-6/12 mt-4">
+                            <p>
+                                Score zij:
+                            </p>
+                            <input class="c-form__input-float" type="number" max="13" name="scorezij"/>
+                        </div>
                     </div>
                 </div>
             </div>
