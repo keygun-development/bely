@@ -71,9 +71,8 @@ class ScorebordController extends Controller
 
             $speler->doelsaldo = $speler->scorevoor - $speler->scoretegen;
             if ($speler->gespeeld > 0) {
-                $speler->winstpercentage = round($speler->win / $speler->gespeeld * 100, 1);
+                $speler->winstpercentage = round($speler->win / $speler->gespeeld * 100, 2);
             }
-
             $spelers[] = $speler;
         }
 

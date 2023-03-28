@@ -31,7 +31,6 @@
             {{ player.Verkortenaam }}
         </div>
     </div>
-    {{ selectedPlayersWij[0] }}
     <input type="hidden" name="speler1" :value="selectedPlayersWij[0] ? selectedPlayersWij[0] : ''">
     <input type="hidden" name="speler2" :value="selectedPlayersWij[1] ? selectedPlayersWij[1] : ''">
     <input type="hidden" name="speler3" :value="selectedPlayersWij[2] ? selectedPlayersWij[2] : ''">

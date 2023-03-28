@@ -17,23 +17,18 @@ class Speler extends Model
     public int $scorevoor;
     public int $scoretegen;
     public int $doelsaldo;
-    public int $winstpercentage;
+    public float $winstpercentage;
 
     public static function cmp($a, $b): ?int
     {
-        if ($b->gespeeld > 0 && $a->gespeeld > 0) {
-            if(round($b->win / $b->gespeeld, 5) === round($a->win / $a->gespeeld, 5)) {
-                if ($b->win === $a->win) {
-                    return strcmp($b->scorevoor, $a->scorevoor);
-                }
-                return strcmp($b->win, $a->win);
-            }
-            return strcmp(round($b->win / $b->gespeeld, 5), round($a->win / $a->gespeeld, 5));
+        if (round($a->winstpercentage, 10) != round($b->winstpercentage, 10)) {
+            return (round($a->winstpercentage, 10) < round($b->winstpercentage, 10)) ? 1 : -1;
+        } else if ($a->win != $b->win) {
+            return ($a->win < $b->win) ? 1 : -1;
+        } else if ($a->gespeeld != $b->gespeeld) {
+            return ($a->gespeeld > $b->gespeeld) ? 1 : -1;
         } else {
-            if ($b->gespeeld > 0) {
-                return strcmp($b->gespeeld, $a->gespeeld);
-            }
+            return ($a->scorevoor < $b->scorevoor) ? 1 : -1;
         }
-        return null;
     }
 }

@@ -52,7 +52,7 @@
                 {{ $speler->doelsaldo }}
             </td>
             <td>
-                {{ $speler->winstpercentage }}%
+                {{ round($speler->winstpercentage) }}%
             </td>
         </tr>
     @endforeach
