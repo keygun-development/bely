@@ -1,57 +1,57 @@
 <table class="c-table__scroll-wrapper bg-white">
     <tr class="border-b">
-        <th class="col-1" colspan="2">
+        <th class="col-1 p-2 md:p-4" colspan="2">
             Naam
         </th>
-        <th>
+        <th class="p-2 md:p-4">
             G
         </th>
-        <th>
+        <th class="p-2 md:p-4">
             W
         </th>
-        <th>
+        <th class="p-2 md:p-4">
             V
         </th>
-        <th>
+        <th class="p-2 md:p-4">
             SV
         </th>
-        <th>
+        <th class="p-2 md:p-4">
             ST
         </th>
-        <th>
+        <th class="p-2 md:p-4">
             DS
         </th>
-        <th>
+        <th class="p-2 md:p-4">
             WP
         </th>
     </tr>
     @foreach($spelers as $key => $speler)
         <tr class="border-t">
-            <td>
+            <td class="p-2 md:p-4">
                 {{ $key+1 }}
             </td>
-            <td>
+            <td class="p-2 md:p-4 text-left">
                 {{ $speler->name }}
             </td>
-            <td>
+            <td class="p-2 md:p-4">
                 {{ $speler->gespeeld }}
             </td>
-            <td>
+            <td class="p-2 md:p-4">
                 {{ $speler->win }}
             </td>
-            <td>
+            <td class="p-2 md:p-4">
                 {{ $speler->verlies }}
             </td>
-            <td>
+            <td class="p-2 md:p-4">
                 {{ $speler->scorevoor }}
             </td>
-            <td>
+            <td class="p-2 md:p-4">
                 {{ $speler->scoretegen }}
             </td>
-            <td>
+            <td class="p-2 md:p-4">
                 {{ $speler->doelsaldo }}
             </td>
-            <td>
+            <td class="p-2 md:p-4">
                 {{ round($speler->winstpercentage) }}%
             </td>
         </tr>
