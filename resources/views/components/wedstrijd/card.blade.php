@@ -1,4 +1,4 @@
-<div class="c-card">
+<div class="hidden md:block c-card">
     <div class="flex flex-col items-center">
         <h2 class="text-2xl">
             {{ $item->ScoreWij }} - {{ $item->ScoreZij }}
@@ -85,5 +85,56 @@
                 </div>
             </template>
         </modal>
+    </div>
+</div>
+<div class="block md:hidden border-t">
+    <p class="text-center">
+        {{ $item->Datum }}
+    </p>
+    <div class="flex justify-between mt-2">
+        <div class="flex flex-col w-8/12">
+            <div class="flex space-x-4">
+                @if($item->SpelerWij1)
+                    <p>
+                        {{ \App\Models\Lid::where('id', $item->SpelerWij1)->first()->Verkortenaam }}
+                    </p>
+                @endif
+                @if($item->SpelerWij2)
+                    <p>
+                        {{ \App\Models\Lid::where('id', $item->SpelerWij2)->first()->Verkortenaam }}
+                    </p>
+                @endif
+                @if($item->SpelerWij3)
+                    <p>
+                        {{ \App\Models\Lid::where('id', $item->SpelerWij3)->first()->Verkortenaam }}
+                    </p>
+                @endif
+            </div>
+            <div class="flex space-x-4">
+                @if($item->SpelerZij1)
+                    <p>
+                        {{ \App\Models\Lid::where('id', $item->SpelerZij1)->first()->Verkortenaam }}
+                    </p>
+                @endif
+                @if($item->SpelerZij2)
+                    <p>
+                        {{ \App\Models\Lid::where('id', $item->SpelerZij2)->first()->Verkortenaam }}
+                    </p>
+                @endif
+                @if($item->SpelerZij3)
+                    <p>
+                        {{ \App\Models\Lid::where('id', $item->SpelerZij3)->first()->Verkortenaam }}
+                    </p>
+                @endif
+            </div>
+        </div>
+        <div class="flex flex-col w-1/12">
+            <p class="text-center">
+                {{ $item->ScoreWij }}
+            </p>
+            <p class="text-center">
+                {{ $item->ScoreZij }}
+            </p>
+        </div>
     </div>
 </div>
