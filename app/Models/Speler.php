@@ -27,8 +27,12 @@ class Speler extends Model
             return ($a->win < $b->win) ? 1 : -1;
         } else if ($a->gespeeld != $b->gespeeld) {
             return ($a->gespeeld > $b->gespeeld) ? 1 : -1;
-        } else {
+        } else if ($a->scorevoor != $b->scorevoor) {
             return ($a->scorevoor < $b->scorevoor) ? 1 : -1;
+        } else if ($a->doelsaldo != $b->doelsaldo) {
+            return ($a->doelsaldo < $b->doelsaldo) ? 1 : -1;
+        } else {
+            return strcmp($a->name, $b->name);
         }
     }
 }

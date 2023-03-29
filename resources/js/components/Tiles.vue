@@ -2,7 +2,7 @@
     <p>
         Spelers wij:
     </p>
-    <div class="flex w-full flex-wrap space-x-4 space-y-4 items-end">
+    <div class="flex w-full flex-wrap gap-4 items-end">
         <div class="c-button"
              v-for="(player, index) in players"
              @click="togglePlayerWij(player.id)"
@@ -18,7 +18,7 @@
     <p class="mt-4">
         Spelers zij:
     </p>
-    <div class="flex w-full flex-wrap space-x-4 space-y-4 items-end">
+    <div class="flex w-full flex-wrap gap-4 items-end">
         <div class="c-button"
              v-for="(player, index) in players"
              @click="togglePlayerZij(player.id)"
