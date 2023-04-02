@@ -13,7 +13,7 @@
                         Pincode
                     </p>
                     <input type="hidden" name="email" value="info@tao.nl" class="c-form__input-float"/>
-                    <input type="password" name="password" class="c-form__input-float"/>
+                    <input type="password" name="key" class="c-form__input-float"/>
                 </div>
                 @if($errors->any())
                     <div class="text-red-500">

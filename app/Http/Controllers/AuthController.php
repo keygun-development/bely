@@ -16,14 +16,14 @@ class AuthController extends Controller
     {
         $this->validate($request, [
             'email' => 'required|email',
-            'password' => 'required',
+            'key' => 'required',
         ]);
 
-        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->key])) {
             return redirect()->intended('dashboard');
         }
 
-        return redirect()->back()->withInput($request->only('email'))->withErrors(['email' => 'These credentials do not match our records.']);
+        return redirect()->back()->withInput($request->only('email'))->withErrors(['email' => 'Je hebt de verkeerde inloggegevens ingevoerd.']);
     }
 
     public function logout(Request $request)

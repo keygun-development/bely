@@ -13,6 +13,9 @@
             V
         </th>
         <th class="p-2 md:p-4">
+            WP
+        </th>
+        <th class="p-2 md:p-4">
             SV
         </th>
         <th class="p-2 md:p-4">
@@ -20,9 +23,6 @@
         </th>
         <th class="p-2 md:p-4">
             DS
-        </th>
-        <th class="p-2 md:p-4">
-            WP
         </th>
     </tr>
     @foreach($spelers as $key => $speler)
@@ -43,6 +43,9 @@
                 {{ $speler->verlies }}
             </td>
             <td class="p-2 md:p-4">
+                {{ round($speler->winstpercentage) }}%
+            </td>
+            <td class="p-2 md:p-4">
                 {{ $speler->scorevoor }}
             </td>
             <td class="p-2 md:p-4">
@@ -50,9 +53,6 @@
             </td>
             <td class="p-2 md:p-4">
                 {{ $speler->doelsaldo }}
-            </td>
-            <td class="p-2 md:p-4">
-                {{ round($speler->winstpercentage) }}%
             </td>
         </tr>
     @endforeach
