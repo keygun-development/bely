@@ -70,7 +70,7 @@
                         wedstrijd voorgoed verwijderd.
                     </p>
                     <div class="flex justify-center mt-4">
-                        <a @click="this.$refs['modalmobile{{ $item->id }}'].close()"
+                        <a @click="this.$refs['modal{{ $item->id }}'].close()"
                            class="c-button c-button__gray cursor-pointer mr-4">
                             Annuleren
                         </a>
