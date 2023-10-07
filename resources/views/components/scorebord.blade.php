@@ -43,7 +43,7 @@
                 {{ $speler->verlies }}
             </td>
             <td class="p-2 md:p-4">
-                {{ $speler->winstpercentage }}%
+                {{ number_format($speler->winstpercentage, 1, '.', '') }}%
             </td>
             <td class="p-2 md:p-4">
                 {{ $speler->scorevoor }}
