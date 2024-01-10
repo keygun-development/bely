@@ -15,7 +15,7 @@
     "dependencies": {
         "@fortawesome/fontawesome-svg-core": "^6.2.1",
         "@fortawesome/free-solid-svg-icons": "^6.2.1",
-        "@vitejs/plugin-vue": "^4.0.0",
+        "@vitejs/plugin-vue": "^4.6.2",
         "autoprefixer": "^10.4.13",
         "sass": "^1.69.7",
         "sass-loader": "^13.2.0",
