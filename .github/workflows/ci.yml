@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: flowcheck install dependencies & run code checkers
-        uses: keygun-development/FlowCheck@v3.0.0
+        uses: keygun-development/FlowCheck@v3.0.1
         with:
           enableTests: true
           enableLinter: true
