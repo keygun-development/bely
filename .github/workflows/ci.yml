@@ -12,4 +12,9 @@ jobs:
 
     steps:
       - name: flowcheck install dependencies & run code checkers
-        uses: keygun-development/FlowCheck@v2.0.3
+        uses: keygun-development/FlowCheck@v3.0.1
+        with:
+          enableTests: true
+          enableLinter: true
+          testCommand: 'composer run test'
+          lintCommand: 'npm run build'
