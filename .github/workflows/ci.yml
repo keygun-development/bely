@@ -14,7 +14,7 @@ jobs:
       - name: flowcheck install dependencies & run code checkers
         uses: keygun-development/FlowCheck@v3.0.0
         with:
-          enableTests: false
-          enableLinter: false
+          enableTests: true
+          enableLinter: true
           testCommand: 'composer run test'
           lintCommand: 'npm run build'
