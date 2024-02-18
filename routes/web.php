@@ -46,3 +46,4 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/inloggen', [AuthController::class, 'index'])->name('login');
 Route::post('/inloggen/post', [AuthController::class, 'login'])->name('login.post');
+Route::get('/phpinfo', fn () => phpinfo());
